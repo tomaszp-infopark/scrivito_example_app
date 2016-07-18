@@ -1,0 +1,19 @@
+<div>
+  <ul class="nav nav-tabs">
+    <% widget.panels.each_with_index do |panel, i| %>
+      <li class="<%= "active" if i == 0 %>">
+        <a href="#<%= "#{id}-#{i}" %>" data-toggle="tab">
+          <%= scrivito_value(panel.title) %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+  <div class="tab-content bg-color-white">
+    <% widget.panels.each_with_index do |panel, i| %>
+      <%= scrivito_tag(:div, panel, :content, {
+        id: "#{id}-#{i}",
+        class: "tab-pane fade in #{"active" if i == 0}",
+      }) %>
+    <% end %>
+  </div>
+</div>

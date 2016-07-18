@@ -14,6 +14,11 @@ Bundler.require(*Rails.groups)
 
 module ScrivitoExampleApp
   class Application < Rails::Application
+    attr_accessor :editor_password
     attr_accessor :google_maps_api_key
+
+    def google_maps_api_key_present?
+      google_maps_api_key.present? && google_maps_api_key != "PLACEHOLDER"
+    end
   end
 end

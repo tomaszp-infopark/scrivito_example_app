@@ -1,0 +1,15 @@
+<%= scrivito_details_for("Background Color") do %>
+  <%= scrivito_tag(:div, widget, :bg_color)  %>
+<% end %>
+
+<%= scrivito_details_for("Background Image") do %>
+  <%= scrivito_tag(:div, widget, :bg_image, data: {
+    scrivito_editors_filter_context: {
+      _image: true,
+    },
+  }) %>
+<% end %>
+
+<%= scrivito_details_for("Top and Bottom Padding") do %>
+  <%= scrivito_tag(:div, widget, :padding_size) %>
+<% end %>

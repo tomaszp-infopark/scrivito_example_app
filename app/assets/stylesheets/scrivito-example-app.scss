@@ -1,0 +1,136 @@
+$bg-colors: (
+  (bg-color-white, #ffffff, #555555),
+  (bg-color-light, #f7f7f7, #555555),
+  (bg-color-dark, #bbbbbb, #ffffff),
+  (bg-color-darker, #555555, #ffffff),
+);
+
+@each $bg-color-name, $bg-color-code, $color-code in $bg-colors {
+  .#{$bg-color-name} {
+    background-color: $bg-color-code !important;
+    color: $color-code !important;
+  }
+}
+
+.section-padding-small {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.section-padding-medium {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.section-padding-large {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.margin-top-0 {
+  margin-top: 0px;
+}
+
+.navbar-scrivito-logo {
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  img {
+    height: 39px;
+  }
+}
+
+.footer {
+  color: #bbb;
+  background-color: #333;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .footer-logo {
+    background: image_url('scrivito-logo-sw.svg') no-repeat center;
+    display: block;
+    width: 110px;
+    height: 30px;
+  }
+
+  .footer-logo:hover {
+    background: image_url('scrivito-logo.svg') no-repeat center;
+  }
+
+  li {
+    border-top: solid 1px #555555;
+  }
+
+  a, i {
+    color: #bbb;
+  }
+
+  a.footer-explanation-link,
+  .footer-explanation-text {
+    color: #f7ecb6;
+  }
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.min-height-200 {
+  min-height: 200px;
+}
+
+.header .mega-menu .dropdown-menu {
+  position: absolute !important;
+}
+
+.notebox {
+  padding: 30px 0 20px 0;
+}
+
+.homepage-notebox,
+.notebox .container {
+  background-color: #f7ecb6;
+  background-image: linear-gradient(#e8e1b1 0.1em, transparent 0.1em);
+  background-size: 100% 1.4em;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+  padding: 15px;
+  color: #705833;
+  position: relative;
+}
+
+.homepage-notebox:before,
+.notebox .container:before {
+  background: rgba(210, 210, 210, 0.4);
+  box-shadow: 0 1px 4px rgba(129, 126, 103, 0.35);
+  display: block;
+  height: 33px;
+  left: 15px;
+  position: absolute;
+  top: -17px;
+  transform: rotate(-4deg);
+  width: 130px;
+}
+
+.notebox .container:after {
+  background: rgba(210, 210, 210, 0.4);
+  box-shadow: 0 1px 4px rgba(129, 126, 103, 0.35);
+  display: block;
+  height: 33px;
+  position: absolute;
+  right: 15px;
+  top: -17px;
+  transform: rotate(3deg);
+  width: 130px;
+}
+
+.homepage-notebox img,
+.notebox .container img {
+  border: 5px solid #ffffff;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+.open > .dropdown-menu {
+  position: absolute;
+  z-index: 11112;
+}

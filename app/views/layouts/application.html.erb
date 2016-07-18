@@ -1,14 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ScrivitoExampleApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <meta charset="UTF-8" />
+  <title>Scrivito Example App</title>
+
   <%= csrf_meta_tags %>
+  <%= scrivito_head_tags %>
+
+  <%= stylesheet_link_tag("application", media: "all") %>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <%= auto_discovery_link_tag(:atom, scrivito_path(@obj.blog, format: :atom)) if @obj.respond_to?(:blog) %>
+
+  <%= javascript_include_tag("https://maps.googleapis.com/maps/api/js?key=#{Rails.application.google_maps_api_key}") %>
+
+  <%= javascript_include_tag("application") %>
 </head>
 <body>
+  <div class="wrapper">
 
-<%= yield %>
+    <%= render("header") %>
 
+    <% if flash.alert %>
+      <div class="container">
+        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">×</button>
+          <strong><%= flash.alert %></strong>
+        </div>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <%= render("footer") %>
+
+  </div>
+  <%= scrivito_body_tags %>
 </body>
 </html>

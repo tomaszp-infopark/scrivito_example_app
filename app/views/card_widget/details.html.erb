@@ -1,0 +1,23 @@
+<%= scrivito_details_for("Title") do %>
+  <%= scrivito_tag(:div, widget, :title)  %>
+<% end %>
+
+<%= scrivito_details_for("Show Card Heading") do %>
+  <%= scrivito_tag(:div, widget, :show_heading)  %>
+<% end %>
+
+<%= scrivito_details_for("Card Heading and Border Color") do %>
+  <%= scrivito_tag(:div, widget, :color)  %>
+<% end %>
+
+<%= scrivito_details_for("Content Background Color") do %>
+  <%= scrivito_tag(:div, widget, :bg_color)  %>
+<% end %>
+
+<%= scrivito_details_for("Content Background Image") do %>
+  <%= scrivito_tag(:div, widget, :bg_image, data: {
+    scrivito_editors_filter_context: {
+      _image: true,
+    },
+  }) %>
+<% end %>

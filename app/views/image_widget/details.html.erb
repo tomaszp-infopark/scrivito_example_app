@@ -1,0 +1,7 @@
+<%= scrivito_details_for("Show Image in Gallery") do %>
+  <%= scrivito_tag(:div, widget, :show_in_lightbox) %>
+<% end %>
+
+<%= scrivito_details_for("Image") do %>
+  <%= scrivito_image_tag(widget, :image, class: "img-responsive") %>
+<% end %>

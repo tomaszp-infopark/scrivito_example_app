@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Photo Stream</h2>
+  </div>
+  <div class="panel-body">
+    <ul class="list-inline">
+      <% posts.each do |post| %>
+        <% if post.image.present? %>
+          <li>
+            <%= link_to(scrivito_path(post)) do %>
+              <%= image_tag(scrivito_path(post.image.binary.transform(width: 60)), {
+                  alt: post.title,
+                  class: "img-responsive",
+                }) %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

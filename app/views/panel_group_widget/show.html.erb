@@ -1,0 +1,11 @@
+<% id = "tab-#{widget.id}" %>
+
+<% if widget.layout_type == "accordion" %>
+  <%= render("panel_group_widget/show_accordion", widget: widget, id: id) %>
+<% elsif widget.layout_type == "carousel" %>
+  <%= render("panel_group_widget/show_carousel", widget: widget, id: id) %>
+<% elsif widget.layout_type == "tabs-left" %>
+  <%= render("panel_group_widget/show_tabs_left", widget: widget, id: id) %>
+<% else %>
+  <%= render("panel_group_widget/show_tabs_top", widget: widget, id: id) %>
+<% end %>

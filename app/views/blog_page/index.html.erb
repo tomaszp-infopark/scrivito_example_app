@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+
+      <%= render(partial: "post", collection: @posts, tag: @tag) %>
+
+      <nav>
+        <ul class="pager">
+          <% if @has_older_page %>
+            <li class="previous">
+              <%= link_to(scrivito_path(@obj, page: @page + 1, tag: @tag)) do %>
+                &larr; Older
+              <% end %>
+            </li>
+          <% end %>
+          <% if @has_newer_page %>
+            <li class="next">
+              <%= link_to(scrivito_path(@obj, page: @page - 1, tag: @tag)) do %>
+                Newer &rarr;
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-md-3">
+      <%= render("tags", selected_tag: @tag) %>
+      <%= render("feed") %>
+      <%= render("photo_stream", posts: @photo_stream) %>
+    </div>
+  </div>
+</div>

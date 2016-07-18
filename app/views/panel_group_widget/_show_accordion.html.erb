@@ -1,0 +1,19 @@
+<% open_index = (widget.panels.size == 1) ? -1 : 0 %>
+<div class="panel-group" id="<%= id %>">
+  <% widget.panels.each_with_index do |panel, i| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a href="#<%= "#{id}-#{i}" %>" data-toggle="collapse" data-parent="#<%= id %>">
+            <%= scrivito_value(panel.title) %>
+          </a>
+        </h4>
+      </div>
+      <div id="<%= "#{id}-#{i}" %>" class="panel-collapse collapse <%= "in" if i == open_index %>">
+        <div class="panel-body bg-color-white">
+          <%= scrivito_tag(:div, panel, :content) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

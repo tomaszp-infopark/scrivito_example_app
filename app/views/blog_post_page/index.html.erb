@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <%= scrivito_image_tag(@obj, :image, class: "img-responsive") %>
+      <%= scrivito_tag(:h1, @obj, :title) %>
+      <p>
+        <i class="glyphicon glyphicon-calendar"></i> <%= @obj.published_at.to_date %>
+        <i class="glyphicon glyphicon-pencil"></i> <%= scrivito_tag(:span, @obj, :author_name) %>
+        <i class="glyphicon glyphicon-envelope"></i> <%= scrivito_tag(:span, @obj, :author_email) %>
+      </p>
+      <%= render("blog_post_page/tags", blog_post_page: @obj, selected_tag: @tag) %>
+      <%= scrivito_tag(:div, @obj, :body) %>
+      <nav>
+        <ul class="pager">
+          <% if @previous_post %>
+            <li class="previous">
+              <%= link_to(scrivito_path(@previous_post, tag: @tag)) do %>
+                &larr; Previous Post
+              <% end %>
+            </li>
+          <% end %>
+          <li>
+            <%= link_to(scrivito_path(blog_page)) do %>
+              <i class="glyphicon glyphicon-home"></i> Blog
+            <% end %>
+          </li>
+          <% if @next_post %>
+            <li class="next">
+              <%= link_to(scrivito_path(@next_post, tag: @tag)) do %>
+                Next Post &rarr;
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-md-3">
+      <%= render("blog_page/recent_posts", posts: @recent_posts) %>
+      <%= render("blog_page/tags", selected_tag: @tag) %>
+      <%= render("blog_page/photo_stream", posts: @photo_stream) %>
+    </div>
+  </div>
+</div>

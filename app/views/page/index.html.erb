@@ -1,0 +1,14 @@
+<% if @obj.display_breadcrumb_and_title? %>
+  <div class="container">
+    <ol class="breadcrumb">
+      <% @obj.ancestors.each do |item| %>
+        <li><%= link_to(item.title, scrivito_path(item)) %></li>
+      <% end %>
+      <%= scrivito_tag(:li, @obj, :title) %>
+    </ol>
+  </div>
+<% end %>
+
+<%= render("features/features_explanation_by_permalink") %>
+
+<%= scrivito_tag(:div, @obj, :body) %>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <%= stylesheet_link_tag("application", media: "all") %>
+  <%= csrf_meta_tags %>
+  <%= scrivito_head_tags %>
+</head>
+<body class="scrivito_dialog">
+  <%= yield %>
+  <%= scrivito_body_tags %>
+  <%= javascript_include_tag("application") %>
+</body>
+</html>

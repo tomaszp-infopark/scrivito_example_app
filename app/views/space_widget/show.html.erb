@@ -1,0 +1,12 @@
+<%
+  padding_css =
+    case widget.size
+    when "large"
+      "section-padding-large"
+    when "medium"
+      "section-padding-medium"
+    else
+      "section-padding-small"
+    end
+%>
+<div class="<%= padding_css %>"></div>

@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require scrivito
+//= require bootstrap-sprockets
+//= require gmaps
+//= require ekko-lightbox
+//= require scrivito-example-app

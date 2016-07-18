@@ -1,0 +1,31 @@
+<%= scrivito_details_for("Title") do %>
+  <%= scrivito_tag(:div, @obj, :title) %>
+<% end %>
+
+<%= scrivito_details_for("Tags") do %>
+  <%= scrivito_tag(:div, @obj, :tags) %>
+<% end %>
+
+<%= scrivito_details_for("Display Breadcrumb and Title on Top of Page") do %>
+  <%= scrivito_tag(:div, @obj, :display_breadcrumb_and_title) %>
+<% end %>
+
+<%= scrivito_details_for("Permalink") do %>
+  <%= scrivito_tag(:div, @obj, :_permalink) %>
+<% end %>
+
+<%= scrivito_details_for("Object Path") do %>
+  <%= scrivito_tag(:div, @obj, :_path) %>
+<% end %>
+
+<%= scrivito_details_for("Object Type") do %>
+  <%= @obj.class.name %>
+<% end %>
+
+<%= scrivito_details_for("Last changed") do %>
+  <%= @obj.last_changed %>
+<% end %>
+
+<%= scrivito_details_for("ID") do %>
+  <%= @obj.id %>
+<% end %>

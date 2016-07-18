@@ -1,0 +1,14 @@
+<div class="panel panel-<%= widget.color %>">
+  <% if widget.show_heading? %>
+    <div class="panel-heading">
+      <%= scrivito_tag(:h3, widget, :title, class: "panel-title") %>
+    </div>
+  <% end %>
+  <div class="panel-body bg-color-<%= widget.bg_color %>"
+    <% if widget.bg_image.present? %>
+      data-background-image-url="<%= scrivito_url(widget.bg_image) %>"
+    <% end %>
+    >
+    <%= scrivito_tag(:div, widget, :content) %>
+  </div>
+</div>

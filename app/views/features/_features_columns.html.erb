@@ -1,0 +1,22 @@
+<% content_for(:headline) do %>
+Column Widget
+<% end %>
+
+<% content_for(:screencast) do %>
+screencast-columns.gif
+<% end %>
+
+<% content_for(:explanation) do %>
+<p>
+Scrivito includes a flexible Column widget. The number of columns as well as the width of each of
+them is configurable via the &quot;Widget properties&quot; view. Since we are using Bootstrap, there is an
+underlying grid of 12 columns you can freely allocate, with the exception that the width of the
+rightmost column is automatically set to the number of grid columns not used by the other widget
+columns. You can remove an empty column by setting its width to zero. Applying this to a non-empty
+column sets its width to one grid column, so you can still access its content.
+</p>
+<p>
+In the examples below, we've already placed a Text widget into each column. Feel free to populate
+them with further widgets!
+</p>
+<% end %>

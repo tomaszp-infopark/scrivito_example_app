@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Feed</h2>
+  </div>
+  <div class="panel-body">
+    <% if scrivito_in_editable_view? %>
+      <span class="btn btn-warning btn-xs">
+        RSS
+      </span>
+    <% else %>
+      <%= link_to(scrivito_path(blog_page, format: :atom), {
+        class: "btn btn-warning btn-xs",
+      }) do %>
+        RSS
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Search by Tag</h2>
+  </div>
+  <div class="panel-body">
+    <ul class="list-inline">
+      <% tag_facets.each do |tag_facet| %>
+        <li>
+          <% if tag_facet.name == @tag %>
+            <span class="label label-success"><%= tag_facet.name %> <%= tag_facet.count %></span>
+          <% else %>
+            <%= link_to(search_path(q: "", tag: tag_facet.name)) do %>
+              <span class="label label-primary"><%= tag_facet.name %> <%= tag_facet.count %></span>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

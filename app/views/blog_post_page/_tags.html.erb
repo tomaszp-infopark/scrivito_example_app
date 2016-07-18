@@ -1,0 +1,13 @@
+<ul class="list-inline">
+  <% blog_post_page.tags.each do |tag| %>
+    <li>
+      <% if tag == selected_tag %>
+        <span class="label label-success"><%= tag %></span>
+      <% else %>
+        <%= link_to(scrivito_path(blog_page, tag: tag)) do -%>
+          <span class="label label-primary"><%= tag %></span>
+        <% end -%>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

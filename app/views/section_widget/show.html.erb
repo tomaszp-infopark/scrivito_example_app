@@ -1,0 +1,18 @@
+<%
+  padding_css =
+    case widget.padding_size
+    when "large"
+      "section-padding-large"
+    when "medium"
+      "section-padding-medium"
+    else
+      "section-padding-small"
+    end
+%>
+<section class="<%= padding_css %> bg-color-<%= widget.bg_color %>"
+  <% if widget.bg_image.present? %>
+    data-background-image-url="<%= scrivito_url(widget.bg_image) %>"
+  <% end %>
+  >
+  <%= scrivito_tag(:div, widget, :content, class: "container") %>
+</section>

@@ -1,0 +1,48 @@
+<% if %w[
+  accordion
+  call-to-action
+  cards
+  carousel
+  columns
+  maps
+  section
+  tab-groups
+].include?(@obj.permalink) %>
+  <%= render("features/features_#{@obj.permalink.underscore}") %>
+
+  <% image_name = yield(:screencast).strip %>
+  <% headline = yield(:headline).strip %>
+
+  <section class="notebox">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="pull-left">
+            <%= headline %>
+          </h4>
+          <a class="alert-link pull-right" href="#explanation" data-toggle="collapse">toggle explanation</a>
+        </div>
+      </div>
+      <div class="row collapse in" id="explanation">
+        <div class="col-md-4">
+          <div>
+            <%= link_to(image_path(image_name), {
+              data: {
+                toggle: "lightbox",
+                title: headline,
+                gallery: "lightbox-gallery",
+              },
+            }) do %>
+              <%= image_tag(image_name, class: "img-responsive") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="text-left">
+            <%= yield(:explanation) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

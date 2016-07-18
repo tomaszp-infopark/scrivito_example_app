@@ -1,0 +1,39 @@
+<%= scrivito_details_for("Title") do %>
+  <%= scrivito_tag(:div, @obj, :title) %>
+<% end %>
+
+<%= scrivito_details_for("Published at") do %>
+  <%= scrivito_tag(:div, @obj, :published_at) %>
+<% end %>
+
+<%= scrivito_details_for("Author name") do %>
+  <%= scrivito_tag(:div, @obj, :author_name) %>
+<% end %>
+
+<%= scrivito_details_for("Author email for Gravatar image") do %>
+  <%= scrivito_tag(:div, @obj, :author_email) %>
+<% end %>
+
+<%= scrivito_details_for("Tags") do %>
+  <%= scrivito_tag(:div, @obj, :tags) %>
+<% end %>
+
+<%= scrivito_details_for("Abstract") do %>
+  <%= scrivito_tag(:div, @obj, :abstract) %>
+<% end %>
+
+<%= scrivito_details_for("Permalink") do %>
+  <%= scrivito_tag(:div, @obj, :_permalink) %>
+<% end %>
+
+<%= scrivito_details_for("Object Type") do %>
+  <%= @obj.class.name %>
+<% end %>
+
+<%= scrivito_details_for("Last changed") do %>
+  <%= @obj.last_changed %>
+<% end %>
+
+<%= scrivito_details_for("ID") do %>
+  <%= @obj.id %>
+<% end %>

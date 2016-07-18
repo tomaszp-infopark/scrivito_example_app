@@ -1,0 +1,29 @@
+{
+  "name": "Scrivito Example App",
+  "description": "A sample Scrivito app with all the widgets you need to build your website. Based on standard bootstrap styles.",
+  "repository": "https://github.com/Scrivito/scrivito_example_app",
+  "logo": "https://avatars3.githubusercontent.com/u/9336796?v=3&s=200",
+  "keywords": ["scrivito", "example", "application", "widgets"],
+  "env": {
+    "SCRIVITO_TENANT": {
+      "description": "Fill in the Scrivito tenant ID from the scrivito.com dashboard. Keep in mind that the content of this tenant will be replaced with the example app seed content when the app will be deployed by clicking the deploy-to-heroku button.",
+      "required": true
+    },
+    "SCRIVITO_API_KEY": {
+      "description": "Fill in the API key from the scrivito.com dashboard. Keep in mind that the content of this tenant will be replaced with the example app seed content when the app will be deployed by clicking the deploy-to-heroku button.",
+      "required": true
+    },
+    "EDITOR_PASSWORD": {
+      "description": "The password that must be entered when switching to Scrivito editor mode. If you leave this empty then everybody can become an editor and change the content of your scrivito tenant.",
+      "required": true
+    },
+    "GOOGLE_MAPS_API_KEY": {
+      "description": "The google maps api key that will be used by the maps widget. You can add this later but without a google api key the widgets will not display a map.",
+      "required": false,
+      "value": "PLACEHOLDER"
+    }
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rails runner SeedContentCreator.create"
+  }
+}

@@ -1,0 +1,14 @@
+<%= content_tag(:div, '', class: "section-padding-small") if scrivito_in_editable_view? %>
+
+<% start_obj = widget.start_obj || @obj %>
+
+<%= scrivito_tag_list(:div, start_obj, :toclist, class: "list-group") do |list, item| %>
+  <% list.tag(:a, {
+    id: "nav_widget_#{widget.id}_#{item.id}",
+    data: { path: item.path },
+    class: "list-group-item",
+    href: scrivito_path(item),
+  }) do %>
+    <%= item.title %>
+  <% end %>
+<% end %>

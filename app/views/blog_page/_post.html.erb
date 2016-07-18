@@ -1,0 +1,31 @@
+<% unless post_iteration.first? %>
+  <hr>
+<% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to(scrivito_path(post, tag: @tag)) do %>
+      <% if post.image.present? %>
+        <%= image_tag(scrivito_path(post.image.binary.transform(width: 970)), {
+            alt: post.title,
+            class: "img-responsive",
+          }) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h4><%= link_to(post.title, scrivito_path(post, tag: @tag)) %></h4>
+    <p>
+      <i class="glyphicon glyphicon-calendar"></i> <%= post.published_at.to_date %>
+      <i class="glyphicon glyphicon-pencil"></i> <%= scrivito_field(post, :author_name) %>
+      <i class="glyphicon glyphicon-envelope"></i> <%= scrivito_field(post, :author_email) %>
+    </p>
+    <%= render("blog_post_page/tags", blog_post_page: post, selected_tag: @tag) %>
+    <p>
+      <%= truncate(post.text_extract, length: 100, separator: " ") %>
+      <%= link_to(scrivito_path(post, tag: @tag), class: "btn-u btn-u-sm") do %>
+        Read More <i class="glyphicon glyphicon-menu-right"></i>
+      <% end %>
+    </p>
+  </div>
+</div>

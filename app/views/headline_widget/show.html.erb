@@ -1,0 +1,22 @@
+<%
+  tag =
+    if %w[h1 h2 h3 h4 h5 h6].include?(widget.tag)
+      widget.tag
+    else
+      "h3"
+    end
+
+  css_class =
+    case widget.alignment
+    when "center"
+      "text-center"
+    when "right"
+      "text-right"
+    else
+      "text-left"
+    end
+%>
+<% if widget.anchor.present? %>
+  <a name="<%= widget.anchor %>"></a>
+<% end %>
+<%= scrivito_tag(tag, widget, :headline, class: css_class) %>

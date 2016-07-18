@@ -1,0 +1,3 @@
+class PageController < CmsController
+
+end

@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Search Again</h2>
+  </div>
+  <div class="panel-body">
+    <%= form_tag(scrivito_path(@obj), method: :get) do %>
+      <div class="input-group">
+        <%= text_field_tag(:q, @q, class: "form-control", placeholder: "Search prefix") %>
+        <span class="input-group-btn">
+          <%= button_tag("Go", class: "btn") %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>

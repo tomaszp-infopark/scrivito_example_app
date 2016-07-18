@@ -1,0 +1,133 @@
+<div class="bg-color-white">
+  <h3 class="margin-top-0">
+    The Scrivito editing panel
+  </h3>
+
+  <div class="row bg-color-white">
+    <div class="col-md-4">
+      <%= image_tag("intro-scrivito-bar-left.png", class: "img-responsive") %>
+      <h4>
+        Working copy menu
+      </h4>
+      <p class="small">
+        <a data-toggle="collapse" data-target="#bar-left,#bar-center,#bar-right">
+          show the details
+        </a>
+      </p>
+      <p class="collapse in" id="bar-left">
+        On the left of the editing panel, there is the <b>working copy menu</b>. With Scrivito,
+        all changes are made inside of a working copy. The changes are only visible to the editor
+        who made them and to other editors that have been invited to the working copy. Since you
+        are the only editor of this demo you cannot invite other editors. The working copy menu
+        lets you switch between different working copies and publish, rename etc. the currently
+        selected one. In this demo, you can create up to three working copies.
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <%= image_tag("intro-scrivito-bar-center.png", class: "img-responsive") %>
+      <h4 class="text-center">
+        View mode selector
+      </h4>
+      <p class="small text-center">
+        <a data-toggle="collapse" data-target="#bar-left,#bar-center,#bar-right">
+          show the details
+        </a>
+      </p>
+      <p class="collapse in" id="bar-center">
+        In the center of the editing bar, there is the <b>view mode selector</b>. You can switch
+        between preview mode, editing mode, and the changes view. Remember that the
+        <em>Published content</em> is not editable. Thus, you need to select or create a
+        working copy when switching to editing mode while the published content is being viewed.
+      </p>
+    </div>
+
+    <div class="col-md-4">
+      <%= image_tag("intro-scrivito-bar-right.png", class: "img-responsive") %>
+      <h4 class="text-right">
+        Content menu
+      </h4>
+      <div class="small text-right">
+        <a data-toggle="collapse" data-target="#bar-left,#bar-center,#bar-right">
+          show the details
+        </a>
+      </div>
+      <p class="collapse in" id="bar-right">
+      On the right of the editing bar, you have <b>the content browser, the preview size selector,
+      and the page menu</b> buttons. The content browser is for browsing and selecting content
+      objects, e.g. the image an image widget should display. The preview size selector lets you
+      choose from several widths for the display of the content preview. Scrivito creates
+      responsive content out of the box, and you can always proof read in different target browser
+      sizes. The page menu offers actions related to the current page.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-color-white">
+  <h3 class="margin-top-0">
+    Creating pages made easy
+  </h3>
+  <div class="row">
+    <div class="col-md-3">
+      <p>
+        There are several options when making pages editable in place with Scrivito. Which ones
+        you choose depends on the amount of freedom and the amount of convenience you want to give
+        to your editors.
+      </p>
+
+      <p>
+        In this demo, we just applied a simple pre-built Bootstrap theme and showcase some of the
+        widgets we've created using basic bootstrap components. This is what you get out of the
+        box after having completed the default Scrivito integration procedure.
+      </p>
+
+      <p>
+        Of course you can select for your editors a different subset of the standard widgets or
+        add other widgets you can create in your app or include from RubyGems.org.
+      </p>
+    </div>
+
+    <div class="col-md-3">
+      <%= image_tag("intro-scrivito-page-type-1.png", class: "img-responsive") %>
+      <h4>
+        Augmented with widgets
+      </h4>
+      <p>
+        You can <b>have your application render basic content on a page</b> and offer editors to
+        create additional content in specific page sections. This introduction page mainly
+        consists of &quot;static&quot; content that cannot be changed by an editor. Thus, the
+        introductory text cannot be deleted. But, at the end of the page, there is a section that
+        can be modified by editors using Scrivito.
+      </p>
+    </div>
+
+    <div class="col-md-3">
+      <%= image_tag("intro-scrivito-page-type-2.png", class: "img-responsive") %>
+      <h4>
+        Fields &amp; widgets
+      </h4>
+      <p>
+        You can create <b>page &quot;templates&quot; specifying a predefined structure</b> your
+        editors simply fill with the content they provide. The blog pages have been built this
+        way. For every blog post, editors simply fill out some fields such as <em>title</em>,
+        <em>tags</em>, etc. Then they provide the body of the blog post by utilizing Scrivito's
+        headline, text or image widgets.  Take a look at the blog included in this demo.
+      </p>
+    </div>
+
+    <div class="col-md-3">
+      <%= image_tag("intro-scrivito-page-type-3.png", class: "img-responsive") %>
+      <h4>
+        Free-form with widgets
+      </h4>
+      <p>
+        You can also create <b>&quot;blank&quot; page templates</b> in which you render just a
+        single Scrivito <em>widgetlist</em> attribute that editors may freely populate with the
+        widgets you provide.  The pages in the <em>Sample Pages&nbsp;&amp; Widgets</em> menu in
+        the top navigation bar are
+        such free-form pages.
+      </p>
+    </div>
+  </div>
+</div>

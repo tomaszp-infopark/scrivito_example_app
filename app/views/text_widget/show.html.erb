@@ -1,0 +1,12 @@
+<%
+  css_class =
+    case widget.alignment
+    when "center"
+      "text-center"
+    when "right"
+      "text-right"
+    else
+      "text-left"
+    end
+%>
+<%= scrivito_tag(:div, widget, :text, class: css_class) %>
