@@ -10,6 +10,7 @@ Rails.application.config.after_initialize do |app|
       https://*.scrvt.com
       https://scrivito-public-cdn.s3-eu-west-1.amazonaws.com
       https://scrivito-upload.s3-eu-west-1.amazonaws.com
+      https://scrivito-upload.s3-accelerate.amazonaws.com
     )
 
     data = %w(data:)
