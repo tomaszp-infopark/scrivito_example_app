@@ -1,5 +1,5 @@
 <% if @obj.display_breadcrumb_and_title? %>
-  <div class="container">
+  <div class="container section-padding-small">
     <ol class="breadcrumb">
       <% @obj.ancestors.each do |item| %>
         <li><%= link_to(item.title, scrivito_path(item)) %></li>

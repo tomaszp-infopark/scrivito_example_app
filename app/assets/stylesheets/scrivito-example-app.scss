@@ -1,9 +1,62 @@
 $bg-colors: (
-  (bg-color-white, #ffffff, #555555),
-  (bg-color-light, #f7f7f7, #555555),
-  (bg-color-dark, #bbbbbb, #ffffff),
-  (bg-color-darker, #555555, #ffffff),
+  (bg-color-white, #ffffff, #666666),
+  (bg-color-light, #f3f3f3, #666666),
+  (bg-color-dark, #cccccc, #ffffff),
+  (bg-color-darker, #aaaaaa, #ffffff),
 );
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,600|Titillium+Web:400';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Titillium Web', serif;
+  font-weight: 400;
+  color:#337ab7;
+}
+
+.bg-color-white,
+.bg-color-light,
+.panel-body.bg-color-white,
+.panel-body.bg-color-light{
+  h1, h2, h3, h4, h5, h6 {
+    color:#337ab7;
+  }
+}
+
+.bg-color-dark,
+.bg-color-darker{
+  h1, h2, h3, h4, h5, h6 {
+    color:#fff;
+  }
+}
+
+.panel-title {
+  color:inherit!important;
+}
+
+.navbar {
+  margin: 0;
+}
+
+body,
+p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7em;
+  font-weight: 300;
+}
+
+body {
+  color: #666666;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
 
 @each $bg-color-name, $bg-color-code, $color-code in $bg-colors {
   .#{$bg-color-name} {
