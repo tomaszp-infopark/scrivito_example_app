@@ -3,3 +3,6 @@
 !/log/.keep
 /tmp
 .env*
+run.sh
+config/database.yml
+config/initializers/fiona7.rb
