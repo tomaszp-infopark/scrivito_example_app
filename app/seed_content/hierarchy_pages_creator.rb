@@ -34,7 +34,7 @@ class HierarchyPagesCreator < BaseSeedContentCreator
   def create_hierarchy_page(path, child_order=nil)
     puts("creating hierarchy page #{path}")
     Page.create({
-      _path: path,
+      _path: ("/" + path),
       title: "Page #{path.gsub("hierarchy/", "").gsub("/", "-")}",
       child_order: child_order,
       display_breadcrumb_and_title: "yes",

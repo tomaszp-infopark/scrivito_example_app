@@ -1,7 +1,7 @@
 class SeedContentCreator < BaseSeedContentCreator
 
   def self.create
-    workspace = Scrivito::Workspace.create(title: "Example #{SecureRandom.hex(6)}")
+    workspace = Scrivito::Workspace.find(:rtc)
     Scrivito::Workspace.current = workspace
     new(seed_creator: nil).create
     workspace.publish
@@ -9,8 +9,7 @@ class SeedContentCreator < BaseSeedContentCreator
   end
 
   def self.find_or_create_workspace(workspace_title)
-    Scrivito::Workspace.find_by_title(workspace_title) ||
-        Scrivito::Workspace.create(title: workspace_title)
+    Scrivito::Workspace.find(:rtc)
   end
 
   def create
