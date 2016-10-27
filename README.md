@@ -28,16 +28,8 @@ Create an .env file in your app root directory for your API credentials.
 Your .env file should look like this:
 
 ```yaml
-SCRIVITO_TENANT = tenant-id-from-scrivito.com-dashboard
-SCRIVITO_API_KEY = api-key-from-scrivito.com-dashboard
-EDITOR_PASSWORD = my-secret-editor-password
 GOOGLE_MAPS_API_KEY = api-key-from-developer.google.com
 ```
-
-You can leave out EDITOR_PASSWORD. But keep in mind that in this case
-everybody who can access your app can change your content. This should
-not be a problem if you run your app on localhost. But if you deploy it
-in public you should set a password.
 
 You can leave out GOOGLE_MAPS_API_KEY. In this case the maps widgets
 will not display a map. You can add the key later.
